@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#03152E">
+<title>Chelsea Supporters Club UAE</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+
+
+<div id="app">
+
+  <header class="appbar">
+    <button class="back" id="backBtn" aria-label="Back">&#8249;</button>
+    <div class="crest" id="crest">CFC</div>
+    <div class="t"><b id="barTitle">Chelsea UAE</b><small id="barSub">Official Supporters Club</small></div>
+    <button class="qr" id="qrBtn" aria-label="Membership card">&#9635;</button>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HOME ============ -->
+    <section class="view on" id="v-home">
+      <div class="hero">
+        <div class="lg"><span id="heroComp">Premier League</span></div>
+        <div class="match">
+          <div class="side"><i></i><b id="heroAway">—</b></div>
+          <div class="ko"><b id="heroKo">—</b><small id="heroDate">—</small></div>
+          <div class="side"><i></i><b id="heroHome">—</b></div>
+        </div>
+        <div class="where">
+          <div class="faces"><i>MV</i><i>RK</i><i>AS</i><i id="faceMore">+85</i></div>
+          <p><b><span id="goingCount">88</span> members going</b>Belgian Beer Café &middot; doors 18:30</p>
+        </div>
+        <div class="cta">
+          <button class="btn gold" id="comingBtn">I'm coming</button>
+          <button class="btn ghost" data-go="menu">Menu</button>
+        </div>
+      </div>
+
+      <button class="notice" data-go="notices">
+        <i></i>
+        <span class="tx"><b>From the committee</b><p id="noticeTeaser">Season tickets ballot opens Monday. Members only, 48 hours.</p></span>
+        <span class="go">&#8250;</span>
+      </button>
+
+      <div class="otd">
+        <div class="hd"><b>On this day</b><span class="yr">2012</span></div>
+        <h4>Drogba. Munich. Penalty five.</h4>
+        <p>Where were you when it went in? <span id="wwyCount">41</span> members have added theirs.</p>
+        <button class="add" id="wwyBtn">Add your memory &rarr;</button>
+      </div>
+
+      <div class="quick">
+        <button data-go="honours">Honours<small>Every major European trophy</small></button>
+        <button data-go="trips">Away trips<small>2 open now</small></button>
+      </div>
+      <div class="quick">
+        <button data-go="hafh">Home Away From Home<small>Who's flying, and when</small></button>
+        <button data-go="perks">Perks<small>Member discounts</small></button>
+      </div>
+    </section>
+
+    <!-- ============ FIXTURES ============ -->
+    <section class="view" id="v-fixtures">
+      <div class="pghead"><small>Season 2026/27</small><h3>Fixtures</h3></div>
+      <div class="chips" id="fixChips">
+        <button aria-pressed="true" data-c="all">All</button>
+        <button aria-pressed="false" data-c="Premier League">Premier League</button>
+        <button aria-pressed="false" data-c="League Cup">League Cup</button>
+        <button aria-pressed="false" data-c="going">I'm going</button>
+      </div>
+      <div id="fixList"></div>
+      <div class="pghead" style="margin-top:8px;border-top:1px solid var(--line)"><small>Season prize · two tickets, Stamford Bridge</small><h3>Predictions</h3></div>
+      <div id="predPanel" style="padding:0 16px 20px;background:#fff"></div>
+    </section>
+<!-- ============ VAULT ============ -->
+    <section class="view" id="v-vault">
+      <div class="vault-top">
+        <div class="sec" style="color:var(--gold-lt)">The Vault</div>
+        <h3>Every final.<br>Every film. Every night.</h3>
+        <p>The club's history, and this season as it happens.</p>
+      </div>
+      <div class="chips" id="vaultChips">
+        <button aria-pressed="true" data-f="all">All</button>
+        <button aria-pressed="false" data-f="season">This season</button>
+        <button aria-pressed="false" data-f="finals">Finals</button>
+        <button aria-pressed="false" data-f="ours">Our nights</button>
+        <button aria-pressed="false" data-f="pods">Podcasts</button>
+      </div>
+      <div id="vaultList"></div>
+    </section>
+
+    <!-- ============ CLUB HUB ============ -->
+    <section class="view" id="v-club">
+      <div class="hub">
+        <button class="hubcard" data-go="card">
+          <span class="cr">CFC</span>
+          <span class="tx"><b id="hubName">Your membership</b><small id="hubRole">Not a member yet</small></span>
+          <span class="go">&#8250;</span>
+        </button>
+        <div class="hublist">
+          <button data-go="perks"><i>%</i><span class="tx"><b>Member perks</b><small>Discounts across the partner network</small></span><span class="go">&#8250;</span></button>
+          <button data-go="menu"><i>&#9678;</i><span class="tx"><b>Matchday menu</b><small>Belgian Beer Café, member prices</small></span><span class="go">&#8250;</span></button>
+          <button data-go="trips"><i>&#9992;</i><span class="tx"><b>Away trips</b><small>London and Riyadh open</small></span><span class="go">&#8250;</span></button>
+          <button data-go="hafh"><i>&#9679;</i><span class="tx"><b>Home Away From Home</b><small>Who's travelling to which fixture</small></span><span class="go">&#8250;</span></button>
+          <button data-go="honours"><i>&#9733;</i><span class="tx"><b>Honours</b><small>Every trophy, every night, on video</small></span><span class="go">&#8250;</span></button>
+          <button data-go="notices"><i>&#9993;</i><span class="tx"><b>Club notices</b><small>From the committee</small></span><span class="go">&#8250;</span></button>
+          <button data-go="terms"><i>&#9776;</i><span class="tx"><b>Terms &amp; conditions</b><small>Membership terms</small></span><span class="go">&#8250;</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CARD / JOIN ============ -->
+    <section class="view" id="v-card">
+      <div id="joinWrap">
+        <div class="join-top">
+          <h2>Chelsea in Dubai,<br>done properly.</h2>
+          <p>Every match, one room, one membership.</p>
+          <div class="count"><b>642</b><small>members this season</small></div>
+        </div>
+        <div class="plist">
+          <div class="row"><i>&#10003;</i><span>Reserved seating at the official venue, every match</span></div>
+          <div class="row"><i>&#10003;</i><span>Members WhatsApp group, opened on payment</span></div>
+          <div class="row"><i>&#10003;</i><span>Discounts across the club partner network</span></div>
+          <div class="row"><i>&#10003;</i><span>Away trips and ticket ballots first</span></div>
+          <div class="row"><i>&#10003;</i><span>The Vault: every film and every final</span></div>
+        </div>
+        <div class="join-foot">
+          <div class="field"><label for="nm">Full name</label><input id="nm" type="text" placeholder="Your name" autocomplete="name"></div>
+          <div class="pr"><b>AED 150</b><small>Full season</small></div>
+          <p class="mnote" style="margin-bottom:12px;padding:0 4px">Payment link coming soon — card issued now for matchday use.</p><button class="btn" id="payBtn">Join now</button>
+        </div>
+      </div>
+      <div id="cardWrap" style="display:none">
+        <div class="cardpg">
+          <div class="memcard">
+            <div class="tp"><div class="cr">CFC</div><em>2026/27</em></div>
+            <div class="nm" id="cardName">Member</div>
+            <div class="rl">Full member</div>
+            <div class="mt">
+              <div><small>Member no.</small><b id="cardNo">CFC&middot;0643</b></div>
+              <div><small>Valid to</small><b>MAY 2027</b></div>
+            </div>
+          </div>
+          <div class="qrbox"><canvas id="qrCanvas"></canvas></div>
+          <p class="nt">Show at the door on matchday, and at any club partner before you pay.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PERKS ============ -->
+    <section class="view" id="v-perks">
+      <div class="pghead"><small>Members only</small><h3>Perks</h3></div>
+      <div class="chips" id="perkChips">
+        <button aria-pressed="true" data-k="all">All</button>
+        <button aria-pressed="false" data-k="food">Food</button>
+        <button aria-pressed="false" data-k="retail">Retail</button>
+        <button aria-pressed="false" data-k="auto">Auto</button>
+        <button aria-pressed="false" data-k="travel">Travel</button>
+        <button aria-pressed="false" data-k="services">Services</button>
+      </div>
+      <div id="perkList"></div>
+      <div class="revbar">
+        <b>Nine partner slots. Six open.</b>
+        <p>Each partner pays the club for the season to reach 642 verified members with a redeemable offer. Slots are capped by category so no partner competes with another.</p>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="view" id="v-menu">
+      <div class="pghead"><small>Belgian Beer Café &middot; matchday</small><h3>Menu</h3></div>
+      <div class="mgroup">
+        <h5>Matchday packages</h5>
+        <div class="mitem"><div class="r"><b>Four drinks</b><span>130</span></div><p>House beer, wine or soft drinks. Matchday only.</p></div>
+        <div class="mitem"><div class="r"><b>Six drinks</b><span>180</span></div><p>House beer, wine or soft drinks. Matchday only.</p></div>
+        <div class="mitem"><div class="r"><b>Two hours unlimited</b><span>230</span></div><p>From kickoff. Members only, card required.</p></div>
+      </div>
+      <div class="mgroup">
+        <h5>Plates</h5>
+        <div class="mitem"><div class="r"><b>Fish and chips</b><span>70</span></div><p>Beer battered fillet, fries, tartar sauce, pickled onions.</p></div>
+        <div class="mitem"><div class="r"><b>Pie, mash and liquor</b><span>60</span></div><p>Minced beef pie, mashed potato, parsley liquor.</p></div>
+        <div class="mitem"><div class="r"><b>The Bridge burger</b><span>75</span></div><p>Angus beef, melted cheese, onion rings, fries, slaw.</p></div>
+        <div class="mitem"><div class="r"><b>Bangers and mash</b><span>70</span></div><p>Cumberland sausage, mash, green beans, onion gravy.</p></div>
+        <div class="mitem"><div class="r"><b>Chicken tikka</b><span>55</span></div><p>Marinated thigh, mint chutney, raita, naan.</p></div>
+        <div class="mitem"><div class="r"><b>Butter chicken</b><span>65</span></div><p>Steamed rice, papadum, mango chutney.</p></div>
+        <div class="mitem"><div class="r"><b>Vegetable pie</b><span>60</span></div><p>Mixed vegetables, mash, vegetarian gravy.</p></div>
+      </div>
+      <div class="mgroup">
+        <h5>Sides</h5>
+        <div class="mitem"><div class="r"><b>Fries</b><span>25</span></div></div>
+        <div class="mitem"><div class="r"><b>Cheesy fries</b><span>30</span></div></div>
+        <div class="mitem"><div class="r"><b>Masala gravy fries</b><span>30</span></div></div>
+        <div class="mitem"><div class="r"><b>Onion rings</b><span>28</span></div></div>
+      </div>
+      <p class="mnote">Prices in AED, inclusive of all government fees and taxes. Members receive 25% off outside matchdays on presentation of the membership card, subject to venue rules and exclusions.</p>
+    </section>
+
+    <!-- ============ TRIPS ============ -->
+    <section class="view" id="v-trips">
+      <div class="pghead"><small>Members only</small><h3>Away trips</h3></div>
+      <div id="tripList"></div>
+      <p class="mnote">Places are held for 48 hours after registering. Payment is taken in the app and is non-refundable once flights are ticketed.</p>
+    </section>
+
+    <!-- ============ HOME AWAY FROM HOME ============ -->
+    <section class="view" id="v-hafh">
+      <div class="pghead"><small>Who's travelling</small><h3>Home Away From Home</h3></div>
+      <div id="hafhList"></div>
+      <div style="padding:16px">
+        <button class="btn out" id="hafhBtn">Add my trip</button>
+      </div>
+      <p class="mnote">Only your name, the fixture and your city are shown to other members. Nothing else is shared.</p>
+    </section>
+
+    <!-- ============ HONOURS ============ -->
+    <section class="view" id="v-honours">
+      <div class="hon">
+        <div class="sec">Honours</div>
+        <h2 class="lead">The only club to have won <em>every major European trophy</em>.</h2>
+        <div class="sub">Champions of England. Champions of Europe. Champions of the world. Tap a night to watch it back.</div>
+        <div class="tally">
+          <div><b>2</b><small>Champions League</small></div>
+          <div><b>2</b><small>Europa League</small></div>
+          <div><b>2</b><small>Cup Winners' Cup</small></div>
+          <div><b>2</b><small>Super Cup</small></div>
+          <div><b>1</b><small>Conference League</small></div>
+          <div><b>1</b><small>Club World Cup</small></div>
+        </div>
+        <div class="tro-list" id="troList"></div>
+        <div class="claim">
+          <b>Wrocław, 28 May 2025.</b>
+          <small>Beating Real Betis completed the set. No club in the game had done it before.</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NOTICES ============ -->
+    <section class="view" id="v-notices">
+      <div class="pghead"><small>From the committee</small><h3>Club notices</h3></div>
+      <div id="noticeList"></div>
+    </section>
+
+    <!-- ============ TERMS ============ -->
+    <section class="view" id="v-terms">
+      <div class="pghead"><small>Membership</small><h3>Terms &amp; conditions</h3></div>
+      <div class="terms">
+        <p class="intro">Chelsea Supporters Club UAE is a voluntary supporters club affiliated with Chelsea Football Club as an international supporters club.</p>
+
+        <h4>1. Membership</h4>
+        <ul>
+          <li>Membership is open to all Chelsea supporters living in or visiting the UAE.</li>
+          <li>Members must be over 21. Under-21s may attend with a parent or guardian and must leave the venue by 20:00.</li>
+          <li>Membership fees are non-refundable and non-transferable.</li>
+          <li>Proof of membership, the physical card or the app QR code, is required to access benefits.</li>
+        </ul>
+
+        <h4>2. Conduct</h4>
+        <ul>
+          <li>Members and guests are expected to act respectfully towards other supporters, venue staff and the public.</li>
+          <li>Abusive, threatening or discriminatory behaviour may result in suspension or cancellation of membership.</li>
+          <li>Members are responsible for the conduct of any guests they bring.</li>
+        </ul>
+
+        <h4>3. Matchdays and events</h4>
+        <ul>
+          <li>The club organises official matchday gatherings, socials and special events.</li>
+          <li>Event tickets are non-refundable unless the club cancels the event.</li>
+          <li>Seating is first come, first served unless stated otherwise.</li>
+          <li>The club may refuse entry to anyone not complying with these terms.</li>
+        </ul>
+
+        <h4>4. Matchday benefits</h4>
+        <ul>
+          <li>Discounts and matchday deals are valid on official matchdays only.</li>
+          <li>Vouchers and drink tokens are valid for the stated period and cannot be exchanged for cash.</li>
+          <li>Outside matchdays, members receive 25% off subject to venue rules and exclusions.</li>
+        </ul>
+
+        <h4>5. Money</h4>
+        <ul>
+          <li>Membership fees and merchandise sales go towards running costs and event consumables.</li>
+          <li>The club is not a commercial business.</li>
+          <li>Membership and payment records are held by the club.</li>
+        </ul>
+
+        <h4>6. Media and filming</h4>
+        <ul>
+          <li>By attending matchdays and events, members agree to being photographed or filmed for promotional purposes unless they opt out in writing to the club.</li>
+          <li>The club's appointed media partner films matchdays and events and retains ownership of that footage.</li>
+          <li>The club may use that material on its social channels, in the app and in printed materials at no cost.</li>
+          <li>Any member may ask to be removed from a specific piece of content at any time.</li>
+        </ul>
+
+        <h4>7. Liability</h4>
+        <ul>
+          <li>Members and guests attend at their own risk.</li>
+          <li>The club accepts no responsibility for personal injury, loss or damage to personal property.</li>
+        </ul>
+
+        <h4>8. Changes</h4>
+        <ul>
+          <li>The club may update these terms at any time.</li>
+          <li>Members will be notified of significant changes by email, in the app, or on official channels.</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <nav role="tablist">
+    <button role="tab" data-tab="home" aria-selected="true"><i></i><span>Home</span></button>
+    <button role="tab" data-tab="fixtures" aria-selected="false"><i></i><span>Fixtures</span></button>
+    <button role="tab" data-tab="vault" aria-selected="false"><i></i><span>Vault</span></button>
+    <button role="tab" data-tab="club" aria-selected="false"><i></i><span>Club</span></button>
+  </nav>
+
+  <div id="toast" role="status" aria-live="polite"></div>
+</div>
+
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

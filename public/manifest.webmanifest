@@ -1,0 +1,18 @@
+{
+  "name": "Chelsea Supporters Club UAE",
+  "short_name": "Chelsea UAE",
+  "description": "Official supporters club app — fixtures, vault, membership",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#03152E",
+  "theme_color": "#03152E",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
