@@ -22,8 +22,7 @@ a{color:inherit;text-decoration:none}
 .appbar .back{width:34px;height:34px;flex:none;border-radius:50%;background:rgba(255,255,255,.12);
   display:none;place-items:center;font-size:17px;line-height:1}
 .appbar .back.on{display:grid}
-.appbar .crest{width:38px;height:38px;flex:none;border-radius:6px;background:var(--blue);
-  border:1.5px solid rgba(255,255,255,.3);display:grid;place-items:center;font-size:12px;font-weight:900}
+.appbar .crest{width:38px;height:38px;flex:none;border-radius:50%;object-fit:cover;background:transparent}
 .appbar .t{min-width:0}
 .appbar .t b{display:block;font-size:16.5px;font-weight:800;letter-spacing:-.02em;line-height:1.1;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -178,7 +177,7 @@ nav button[aria-selected="true"] i{background:currentColor;opacity:1}
 .hubcard{background:linear-gradient(150deg,var(--blue),var(--blue-dk));border-radius:12px;padding:17px;color:#fff;
   border:1px solid rgba(200,163,74,.4);display:flex;align-items:center;gap:14px;width:100%;text-align:left;position:relative;overflow:hidden}
 .hubcard::after{content:"";position:absolute;right:-40px;bottom:-64px;width:150px;height:150px;border-radius:50%;border:20px solid rgba(255,255,255,.06)}
-.hubcard .cr{width:42px;height:42px;flex:none;border-radius:7px;background:rgba(255,255,255,.16);border:1.4px solid rgba(255,255,255,.32);display:grid;place-items:center;font-size:12px;font-weight:900;position:relative}
+.hubcard .cr{width:42px;height:42px;flex:none;border-radius:50%;object-fit:cover;background:transparent}
 .hubcard .tx{position:relative;min-width:0}
 .hubcard .tx b{display:block;font-size:16px;font-weight:800;letter-spacing:-.02em}
 .hubcard .tx small{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-lt);margin-top:4px;font-weight:700}
@@ -198,7 +197,7 @@ nav button[aria-selected="true"] i{background:currentColor;opacity:1}
   position:relative;overflow:hidden;border:1px solid rgba(200,163,74,.4)}
 .memcard::after{content:"";position:absolute;right:-46px;bottom:-76px;width:180px;height:180px;border-radius:50%;border:24px solid rgba(255,255,255,.06)}
 .memcard .tp{display:flex;justify-content:space-between;align-items:flex-start;position:relative}
-.memcard .tp .cr{width:34px;height:34px;border-radius:6px;background:rgba(255,255,255,.16);border:1.4px solid rgba(255,255,255,.32);display:grid;place-items:center;font-size:11px;font-weight:900}
+.memcard .tp .cr{width:34px;height:34px;border-radius:50%;object-fit:cover;background:transparent}
 .memcard .tp em{font-style:normal;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);font-weight:800}
 .memcard .nm{font-size:25px;font-weight:900;letter-spacing:-.025em;margin:26px 0 4px;position:relative}
 .memcard .rl{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-lt);font-weight:700;position:relative}
