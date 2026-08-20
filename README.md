@@ -14,6 +14,7 @@ Official supporters club app for Chelsea fans in the UAE — fixtures, RSVPs, Th
    - `supabase/migrations/001_initial.sql`
    - `supabase/migrations/002_seed_content.sql`
    - `supabase/migrations/003_update_vault_and_fixtures.sql`
+   - `supabase/migrations/004_seed_aug_oct_fixtures.sql` *(run if Aug–Oct fixtures are missing)*
 2. **Auth** — enable **Anonymous sign-ins** in Supabase → Authentication → Providers.
 3. **Env** — copy `.env.example` to `.env` and set:
    - `VITE_SUPABASE_URL`
