@@ -1,5 +1,6 @@
 import { supabase, ensureAuth } from './supabase.js';
 import { renderHonours } from './honours.js';
+import { crestImg, setTeamCrest } from './teamLogos.js';
 
 const TABS = ['home', 'fixtures', 'vault', 'club'];
 const TITLES = {
@@ -160,6 +161,8 @@ function syncHero() {
   $('#heroDate').textContent = `${f.label} · GST`;
   $('#heroAway').textContent = teams.away;
   $('#heroHome').textContent = teams.home;
+  setTeamCrest($('#heroAwayCrest'), teams.away);
+  setTeamCrest($('#heroHomeCrest'), teams.home);
   $('#goingCount').textContent = f.going;
   $('#faceMore').textContent = '+' + Math.max(f.going - 3, 0);
   const btn = $('#comingBtn');
@@ -200,12 +203,17 @@ function renderFixtures() {
     el.innerHTML = '<div class="empty">Nothing here yet. Mark yourself in on a fixture and it will show up.</div>';
     return;
   }
-  el.innerHTML = list.map((f) => `
+  el.innerHTML = list.map((f) => {
+    const teams = parseFixtureTeams(f.title);
+    return `
     <div class="fx${f.is_featured ? ' next' : ''}">
       <div class="dt"><b>${f.d}</b><small>${f.m}</small></div>
-      <div class="md"><em>${f.competition}</em><b>${f.title}</b><small>${f.kickoff_gst}${f.going ? ` · ${f.going} going` : ''}</small></div>
+      <div class="md"><em>${f.competition}</em>
+        <div class="fix-teams">${crestImg(teams.away, 'team-crest sm')}<span class="vx">v</span>${crestImg(teams.home, 'team-crest sm')}</div>
+        <b>${f.title}</b><small>${f.kickoff_gst}${f.going ? ` · ${f.going} going` : ''}</small></div>
       <button class="rsvp" data-id="${f.id}" aria-pressed="${f.rsvp ? 'true' : 'false'}">${f.rsvp ? 'Going' : "I'm in"}</button>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   el.querySelectorAll('[data-id]').forEach((btn) => {
     btn.addEventListener('click', () => {
