@@ -4,7 +4,7 @@ import { crestImg, setTeamCrest } from './teamLogos.js';
 
 const TABS = ['home', 'fixtures', 'vault', 'club'];
 const TITLES = {
-  home: ['Chelsea UAE', 'Official Supporters Club'],
+  home: ['Chelsea Supporters UAE', 'Official Supporters Club'],
   fixtures: ['Fixtures', 'Season 2026/27'],
   vault: ['The Vault', 'Films and finals'],
   club: ['The Club', 'Membership and perks'],
